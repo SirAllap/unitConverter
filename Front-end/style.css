@@ -95,8 +95,8 @@ span.headerInfo {
         justify-content: space-between;
         align-items: flex-start;
         width: 50%;
-        height: 20%;
-        overflow: scroll;
+        height: 30%;
+        overflow-y: auto;
         box-sizing: border-box;
     }
 
@@ -127,30 +127,6 @@ span.headerInfo {
     }
     /* records */
 /* main-container */
-
-/* footer */
-#footer {
-    position: fixed;
-    display: flex;
-    justify-content: space-evenly;
-    bottom: 0;
-    height: 40px;
-    width: 100vw;
-    background: rgb(38, 7, 50);
-    text-align: center;
-    color: white;
-    right: 0;
-}
-
-div.footerInfo {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-/* footer */
 
 /* Buttons&Inputs */
 button,
@@ -207,3 +183,28 @@ button.conversionIcon {
     }
     /* select unit */
 /* Buttons&Inputs */
+
+/* footer */
+#footer {
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0;
+    height: 40px;
+    width: 100vw;
+    background: rgb(38, 7, 50);
+    text-align: center;
+    color: white;
+    right: 0;
+}
+
+div.footerInfo {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* footer */
