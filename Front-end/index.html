@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>OxygenTechnicalTest</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <span class="headerInfo">⇆ unit converter</span>
+    </div>
+    <!-- Main content -->
+    <div id="main-container">
+      <!-- Converter -->
+      <div class="converter">
+        <div class="containerTitle">convert</div>
+        <div class="unitSelect">
+          <select
+            name="measures"
+            id="mesures-select"
+            v-model="inputOption"
+            v-on:change="convert"
+          >
+            <option
+              class="convertOptions"
+              v-for="(convert, idx) in conversions"
+              :key="idx"
+              :value="convert.val"
+            >
+              {{ convert.unit }}
+            </option>
+          </select>
+          <button class="conversionIcon" @click="swapUnit">⇆</button>
+          <div class="inputNumber">
+            <div class="col-auto">
+              <input
+                type="number"
+                id="toConvert"
+                class="conversor"
+                v-model="inputNumber"
+                v-on:input="convert"
+                @focus="$event.target.select()"
+              />
+              <span> {{ unitToChange }} </span>
+              <!-- {{ errorMsg }} -->
+            </div>
+          </div>
+        </div>
+        <div class="bottomInfo">
+          <button @click="addConversion">♡</button>
+          <div class="saveResult">
+            <span>{{ resultOfConversion }} {{ unitChanged }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- Records -->
+      <div class="recordsTitle">saved</div>
+      <div class="records">
+        <div class="savedConversions" v-for="(ele, n) in savedConversions">
+          <span
+            >{{ ele.currentUnit }} {{ ele.unit2change }} → {{ ele.convertedUnit
+            }} {{ ele.unitChanged }}</span
+          >
+          <button class="xbutton" @click="removeSavedConversions(n)">x</button>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footerInfo">
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+      </div>
+    </footer>
+  </body>
+  <script src="main.js"></script>
+</html>
